@@ -1,14 +1,18 @@
 package arrays;
 
-public class Ceiling {
+public class Floor {
     public static void main(String[] args) {
         int[] arr = {1,8,9,18,26,52,68,99};
-        int target = 35;
-        int ans = findCeiling(arr, target);
+        int target = 20;
+        int ans = findFloor(arr, target);
         System.out.println(ans);
     }
-
-    private static int findCeiling(int[] arr, int target) {
+    //return the index: greatest number <= target
+    private static int findFloor(int[] arr, int target) {
+        if(target < arr[0])
+        {
+            return -1;
+        }
         int start = 0;
         int end = arr.length - 1;
 
@@ -24,6 +28,6 @@ public class Ceiling {
             }
             else return mid;
         }
-        return start;
+        return end;
     }
 }
